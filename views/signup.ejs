@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup</title>
-    <link rel="stylesheet" href="/style.css">
+    <%- include('./partials/head') %>
+    <title>Sign up</title>
 </head>
 <body>
-    <div class="form-container">
-        <h2>Signup</h2>
-        <form action="/Signup" method="post">
-            <div class="form-group">
-                <label for="name">Username: </label>
-                <input type="text" id="name" name="username" placeholder="Enter your username" required />
+    <div class="container">
+        <div class="inner-box">
+            <h2 class="title">Sign Up</h2>
+            <form action="/user/signup" method="POST">
+                <div class="form-group">
+                    <label>Fullname</label>
+                    <input type="text" name="fullname" placeholder="fullname" required/>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="email" required/>
+                </div>
+                <div class="form-group">
+                    <label>Age</label>
+                    <input type="number" name="age" placeholder="age" required/>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="password" required/>
             </div>
-            <div class="form-group">
-                <label for="password">Password: </label>
-                <input type="password" id="password" name="password" placeholder="password" required>
+            <div class="button-group">
+                <button type="submit">Submit</button>
             </div>
-            <button type="submit" class="submit-btn"> Signup </button>
-        </form>
+            </form>
+        </div>
     </div>
 </body>
 </html>

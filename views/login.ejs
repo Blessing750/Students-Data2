@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('./partials/head') %>
     <title>Login</title>
-    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <div class="form-container">
-        <h1>WELCOME</h1>
-        <form action="/login" method="post">
-            <div class="form-group">
-                <label for="name">Username: </label>
-                <input type="text" id="name" name="username" placeholder="Enter username" required />
+    <div class="container">
+        <% if (messages.length >0) { %>
+            <div class="alert"><%= messages %></div>
+        <% } %>
+        <div class="inner-box">
+            <h2 class="title">Login</h2>
+            <form action="/user/Login" method="POST">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="email" required/>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="password" required/>
             </div>
-            <div class="form-group">
-                <label for="password">Password: </label>
-                <input type="password" id="password" name="password" placeholder="password" required>
+            <div class="button-group">
+                <button type="submit">Submit</button>
             </div>
-            <button type="submit" class="submit-btn">Login</button>
-        </form>
-        <p>Don't have an Account? <a href="/signup">Signup</a></p>
+            </form>
+        </div>
     </div>
 </body>
 </html>
